@@ -29,7 +29,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js', {
-                scope: '/CheckList'
+                scope: '/CheckList/'
             })
                 .then(reg => console.log('Service Worker Registered'))
                 .catch(err => console.error('Service Worker Error:', err));
