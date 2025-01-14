@@ -2,7 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 
-// Add Task
+// Add Tasksss
 addTaskBtn.addEventListener("click", () => {
   const task = taskInput.value.trim();
   if (task) {
