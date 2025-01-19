@@ -1,6 +1,24 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+// The Cloud Functions for Firebase SDK to create Cloud Functions and triggers.
+const {logger} = require("firebase-functions");
+const {onRequest} = require("firebase-functions/v2/https");
+const {onDocumentCreated} = require("firebase-functions/v2/firestore");
+
+// The Firebase Admin SDK to access Firestore.
+const {initializeApp} = require("firebase-admin/app");
+const {getFirestore} = require("firebase-admin/firestore");
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCuWLYWUJ2R4v6ptAKcL2jmXJPDSGl7uW0",
+    authDomain: "info5146.firebaseapp.com",
+    projectId: "info5146",
+    storageBucket: "info5146.firebasestorage.app",
+    messagingSenderId: "711911517967",
+    appId: "1:711911517967:web:cadd485436fb294a85987a"
+  };
+  
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
 
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
@@ -58,22 +76,3 @@ async function renderTasks() {
 window.addEventListener('error', function (event) {
     console.error('Error occurred: ', event.message);
 });
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCuWLYWUJ2R4v6ptAKcL2jmXJPDSGl7uW0",
-  authDomain: "info5146.firebaseapp.com",
-  projectId: "info5146",
-  storageBucket: "info5146.firebasestorage.app",
-  messagingSenderId: "711911517967",
-  appId: "1:711911517967:web:cadd485436fb294a85987a"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
