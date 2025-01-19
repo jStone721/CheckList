@@ -14,5 +14,8 @@
   "devDependencies": {
     "parcel": "^2.13.3",
     "parcel-resolver-ignore": "^2.2.0"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.2"
   }
 }
