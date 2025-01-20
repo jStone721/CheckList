@@ -26,15 +26,5 @@
         <ul id="taskList"></ul>
     </div>
     <script type="module" src="app.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            const s = navigator.serviceWorker;
-            s.register('service-worker.js', {
-                scope: '/CheckList/'
-            })
-                .then(reg => console.log('Service Worker Registered'))
-                .catch(err => console.error('Service Worker Error:', err));
-        }
-    </script>
 </body>
 </html>
