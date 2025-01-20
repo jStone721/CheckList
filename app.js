@@ -1,6 +1,6 @@
 // The Firebase Admin SDK to access Firestore.
 import { initializeApp } from 'firebase/app'
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, setDoc, getDoc, getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
