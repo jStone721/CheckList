@@ -1,7 +1,6 @@
 // The Firebase Admin SDK to access Firestore.
 import { initializeApp } from 'firebase/app'
 import { doc, setDoc, getDoc, getFirestore } from "firebase/firestore";
-import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
     apiKey: "AIzaSyCuWLYWUJ2R4v6ptAKcL2jmXJPDSGl7uW0",
@@ -14,13 +13,10 @@ const firebaseConfig = {
   
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const auth = getAuth(app);
 
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
-
-const userId = auth.currentUser?.uid;
 
 // Add Task
 addTaskBtn.addEventListener('click', async () => {
@@ -49,14 +45,14 @@ async function renderTasks() {
   }
 
   async function addTaskToFirestore(taskText) {
-    await setDoc(doc(db, "todos", userId), {
+    await setDoc(doc(db, "todos", 404), {
       text: taskText, 
       completed: false
     });  
   }
 
   async function getTasksFromFirestore() {
-    const userDoc = doc(db, "todos", userId);
+    const userDoc = doc(db, "todos", 404);
     const userData = (await getDoc(userDoc)).data();
   
     return userData?.tasks || [];
