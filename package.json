@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build --dist-dir docs --public-url /Checklist/ index.html"
+    "build": "parcel build --dist-dir docs --public-url /CheckList/ index.html"
   },
   "keywords": [],
   "author": "",
