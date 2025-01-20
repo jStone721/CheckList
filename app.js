@@ -49,11 +49,10 @@ async function renderTasks() {
   }
 
   async function addTaskToFirestore(taskText) {
-    const userDoc = doc(db, "todos", userId);
-    const userData = (await getDoc(userDoc)).data() || { tasks: [] };
-  
-    userData.tasks.push({ text: taskText, completed: false });
-    await setDoc(userDoc, userData);
+    await setDoc(doc(db, "todos", userId), {
+      text: taskText, 
+      completed: false
+    });  
   }
 
   async function getTasksFromFirestore() {
