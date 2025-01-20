@@ -13,7 +13,6 @@
   "type": "module",
   "devDependencies": {
     "parcel": "^2.13.3",
-    "parcel-bundler": "^1.12.5",
     "parcel-resolver-ignore": "^2.2.0"
   },
   "dependencies": {
