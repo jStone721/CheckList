@@ -7,6 +7,6 @@ export default [
             "no-unused-vars": "warn",
             "no-undef": "warn"
         },
-        ignores: ["node_module/*", "docs/*"]    
+        files: ["*.js"]
       }
 ];

@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { doc, addDoc, getDoc, getFirestore, collection } from "firebase/firestore";
+import { getDocs, addDoc, getDoc, getFirestore, collection } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 
 const sw = new URL('service-worker.js', import.meta.url)
@@ -69,11 +69,14 @@ async function renderTasks() {
   }
 
   async function getTasksFromFirestore() {
-    const userDoc = doc(db, "todos");
-    const userData = (await getDoc(userDoc)).data();
-  
-    return userData?.tasks || [];
-  }
+    var data = await getDocs(collection(db, "todos"));
+    let userData = [];
+    data.forEach((doc) => {
+      userData.push(doc.data());
+  });
+  console.log(userData);
+  return userData;
+}
 
   function sanitizeInput(input) {
     const div = document.createElement("div");
