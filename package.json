@@ -8,7 +8,8 @@
     "build": "parcel build --dist-dir docs --public-url /CheckList/ index.html",
     "dev:build": "parcel build --dist-dir dist --no-content-hash index.html",
     "dev:run": "npm run dev:build && sleep 1 && npm run dev:start",
-    "dev:start": "parcel serve --dist-dir dist index.html"
+    "dev:start": "parcel serve --dist-dir dist index.html",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -26,7 +27,9 @@
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
+    "eslint": "^9.18.0",
     "events": "^3.3.0",
+    "globals": "^15.14.0",
     "https-browserify": "^1.0.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
