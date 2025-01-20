@@ -1,6 +1,6 @@
 // The Firebase Admin SDK to access Firestore.
 const {initializeApp} = require("firebase-admin/lib/app");
-const {getFirestore} = require("firebase-admin/lib/firestore");
+const {getFirestore, doc, setDoc} = require("firebase-admin/lib/firestore");
 const {getAuth} = require("firebase-admin/lib/auth");
 
 const firebaseConfig = {
