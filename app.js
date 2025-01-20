@@ -1,8 +1,6 @@
 // The Firebase Admin SDK to access Firestore.
 const {initializeApp} = require("firebase-admin/lib/app");
-const {getFirestore} = require("firebase-admin/lib/firestore");
-const {setDoc} = require("firebase-admin/lib/firestore");
-const {doc} = require("firebase-admin/lib/firestore");
+const firestore = require("firebase-admin/lib/firestore");
 const {getAuth} = require("firebase-admin/lib/auth");
 
 const firebaseConfig = {
@@ -15,7 +13,7 @@ const firebaseConfig = {
   };
   
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  const db = firestore.getFirestore(app);
   const auth = getAuth(app);
 
 const taskInput = document.getElementById('taskInput');
@@ -51,16 +49,16 @@ async function renderTasks() {
   }
 
   async function addTaskToFirestore(taskText) {
-    const userDoc = doc(db, "todos", userId);
+    const userDoc = firestore.doc(db, "todos", userId);
     const userData = (await getDoc(userDoc)).data() || { tasks: [] };
   
     userData.tasks.push({ text: taskText, completed: false });
-    await setDoc(userDoc, userData);
+    await firestore.setDoc(userDoc, userData);
   }
 
   async function getTasksFromFirestore() {
-    const userDoc = doc(db, "todos", userId);
-    const userData = (await getDoc(userDoc)).data();
+    const userDoc = firestore.doc(db, "todos", userId);
+    const userData = (await firestore.getDoc(userDoc)).data();
   
     return userData?.tasks || [];
   }
