@@ -1,4 +1,4 @@
-22603
+22605
 94C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\firebase\app\dist\compat\app\index.d.ts133818130758212758 0
 81C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@types\http-errors\LICENSE133818093490869951 0
 98C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\google-auth-library\build\src\auth\iam.d.ts133818093529552466 0
@@ -23,7 +23,7 @@
 76C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\yargs\locales\pt.json133818093525425900 0
 101C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\events\tests\set-max-listeners-side-effects.js133818093515861635 0
 84C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\caniuse-lite\data\features.js133818093556886846 0
-46C:\Users\kathe\OneDrive\Desktop\Info 5146\docs133818131798722467 1
+46C:\Users\kathe\OneDrive\Desktop\Info 5146\docs133818134915214411 1
 117C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\firebase\compat\messaging\dist\esm\compat\analytics\index.d.ts133818130835565596 0
 73C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\xtend\package.json133818093490502597 0
 80C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\htmlnano\lib\htmlnano.mjs133818093533651120 0
@@ -74,7 +74,7 @@
 108C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\firebase\firestore\lite\dist\esm\app-check\index.d.ts133818130871653089 0
 106C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\firebase\vertexai\dist\esm\remote-config\index.d.ts133818130924446012 0
 86C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\caniuse-lite\data\regions\SN.js133818093574120935 0
-48C:\Users\kathe\OneDrive\Desktop\Info 5146\app.js133818131564350922 0
+48C:\Users\kathe\OneDrive\Desktop\Info 5146\app.js133818134839381864 0
 72C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\pako\package.json133818093901709389 0
 121C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\auth\dist\node-esm\test\helpers\fake_service_worker.d.ts133818130762249167 0
 67C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\core-util-is133818093497381145 1
@@ -16926,6 +16926,7 @@
 112C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\auth\dist\cordova\src\model\popup_redirect.d.ts133818130846430282 0
 83C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@parcel\workers\lib\index.js133818093516124758 0
 82C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@parcel\workers\lib\process133818093520022145 1
+68C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.1ac588d3.js.map133818134915195024 0
 83C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@parcel\workers\lib\types.js133818093522796577 0
 106C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\storage\dist\src\implementation\json.d.ts133818130717257261 0
 78C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@parcel\workers\lib\web133818093523924147 1
@@ -19484,7 +19485,7 @@
 135C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\firestore\dist\packages\firestore\test\unit\specs\limbo_spec.test.d.ts133818130755410726 0
 143C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\firestore\dist\packages\firestore\test\unit\specs\listen_source_spec.test.d.ts133818130755942359 0
 134C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\firestore\dist\packages\firestore\test\unit\specs\perf_spec.test.d.ts133818130766804838 0
-57C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.html133818131797372391 0
+57C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.html133818134914665003 0
 138C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\firestore\dist\packages\firestore\test\unit\specs\recovery_spec.test.d.ts133818130773563534 0
 142C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\firestore\dist\packages\firestore\test\unit\specs\remote_store_spec.test.d.ts133818130776364223 0
 134C:\Users\kathe\OneDrive\Desktop\Info 5146\node_modules\@firebase\firestore\dist\packages\firestore\test\unit\specs\spec_rpc_error.d.ts133818130783647478 0
@@ -22593,6 +22594,7 @@
 68C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.0182543d.js.map133818123266439502 0
 64C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.0e56ed11.js133818094018126493 0
 68C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.0e56ed11.js.map133818094019462964 0
+64C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.1ac588d3.js133818134914740132 0
 68C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.2f57d39d.js.map133818104922933978 0
 68C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.6434ef5e.js.map133818087618760821 0
 68C:\Users\kathe\OneDrive\Desktop\Info 5146\docs\index.6444554d.js.map133818099306920461 0
