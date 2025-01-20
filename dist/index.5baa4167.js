@@ -596,8 +596,11 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"igcvL":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _app = require("firebase/app");
 var _firestore = require("firebase/firestore");
+var _loglevel = require("loglevel");
+var _loglevelDefault = parcelHelpers.interopDefault(_loglevel);
 const sw = new URL(require("a9f901fea61c26ef"));
 if ('serviceWorker' in navigator) {
     const s = navigator.serviceWorker;
@@ -676,6 +679,12 @@ function sanitizeInput(input) {
 window.addEventListener('error', function(event) {
     console.error('Error occurred: ', event.message);
 });
+// Set the log level (trace, debug, info, warn, error)
+(0, _loglevelDefault.default).setLevel("info");
+// Example logs
+(0, _loglevelDefault.default).info("Application started");
+(0, _loglevelDefault.default).debug("Debugging information");
+(0, _loglevelDefault.default).error("An error occurred");
 
 },{"firebase/app":"aM3Fo","firebase/firestore":"8A4BC","a9f901fea61c26ef":"72bEf"}],"aM3Fo":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

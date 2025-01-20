@@ -97,3 +97,14 @@ async function renderTasks() {
 window.addEventListener('error', function (event) {
     console.error('Error occurred: ', event.message);
 });
+
+
+import log from "loglevel";
+
+// Set the log level (trace, debug, info, warn, error)
+log.setLevel("info");
+
+// Example logs
+log.info("Application started");
+log.debug("Debugging information");
+log.error("An error occurred");

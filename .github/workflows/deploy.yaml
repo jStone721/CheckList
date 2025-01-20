@@ -12,21 +12,28 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Run linting
-        run: npm run lint
 
       - name: Install Dependencies (if any)
         run: |
           if [ -f package.json ]; then
             npm install
           fi
+      
+      - name: Run linting
+        run: npm run lint
 
       - name: Build Project (if any build step exists)
         run: |
           if [ -f package.json ]; then
             npm run build
           fi
+
+      - name: Upload logs
+        run: |
+          mkdir logs
+          echo "Logs uploaded on $(date)" > logs/summary.log
+          tar -czf logs.tar.gz logs
+        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
