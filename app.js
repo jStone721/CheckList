@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDocs, addDoc, getDoc, getFirestore, collection } from "firebase/firestore";
-import { getAuth } from 'firebase/auth';
+import { doc, getDocs, addDoc, updateDoc, getFirestore, collection } from "firebase/firestore";
 
 const sw = new URL('service-worker.js', import.meta.url)
 if ('serviceWorker' in navigator) {
@@ -23,13 +22,12 @@ const firebaseConfig = {
   
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth = getAuth(app);
 
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 
-document.addEventListener('onload', () => {
+window.addEventListener('load', () => {
   renderTasks();
 });
 
@@ -49,15 +47,28 @@ addTaskBtn.addEventListener('click', async () => {
     }
 });
 
+// Remove Task
+taskList.addEventListener('click', async (e) => {
+  if (e.target.tagName === 'LI') {
+    await updateDoc(doc(db, "todos", e.target.id), {
+      completed: true
+    });  
+  }
+  renderTasks();
+});
+
 
 async function renderTasks() {
-    const tasks = await getTasksFromFirestore();
+    var tasks = await getTasksFromFirestore();
     taskList.innerHTML = "";
   
     tasks.forEach((task, index) => {
-      const taskItem = document.createElement("li");
-      taskItem.textContent = task.text;
-      taskList.appendChild(taskItem);
+      if(!task.data().completed){
+        const taskItem = document.createElement("li");
+        taskItem.id = task.id;
+        taskItem.textContent = task.data().text;
+        taskList.appendChild(taskItem);
+      }
     });
   }
 
@@ -72,9 +83,8 @@ async function renderTasks() {
     var data = await getDocs(collection(db, "todos"));
     let userData = [];
     data.forEach((doc) => {
-      userData.push(doc.data());
+      userData.push(doc);
   });
-  console.log(userData);
   return userData;
 }
 
