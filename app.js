@@ -62,7 +62,7 @@ async function renderTasks() {
   }
 
   async function addTaskToFirestore(taskText) {
-    await setDoc(doc(collection(db, "todos")), {
+    await addDoc(collection(db, "todos"), {
       text: taskText, 
       completed: false
     });  
