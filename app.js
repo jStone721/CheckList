@@ -18,6 +18,8 @@ const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 
+getTasksFromFirestore();
+
 // Add Task
 addTaskBtn.addEventListener('click', async () => {
     const task = taskInput.value.trim();
