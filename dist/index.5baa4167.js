@@ -596,11 +596,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"igcvL":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _app = require("firebase/app");
 var _firestore = require("firebase/firestore");
-var _loglevel = require("loglevel");
-var _loglevelDefault = parcelHelpers.interopDefault(_loglevel);
 const sw = new URL(require("a9f901fea61c26ef"));
 if ('serviceWorker' in navigator) {
     const s = navigator.serviceWorker;
@@ -622,6 +619,7 @@ const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 window.addEventListener('load', ()=>{
+    console.log("On page load");
     renderTasks();
 });
 // Add Task
@@ -636,7 +634,7 @@ addTaskBtn.addEventListener('click', async ()=>{
             taskInput.value = "";
         }
         renderTasks();
-    }
+    } else alert("Please enter a task!");
 });
 // Remove Task
 taskList.addEventListener('click', async (e)=>{
@@ -653,6 +651,7 @@ async function renderTasks() {
             const taskItem = document.createElement("li");
             taskItem.id = task.id;
             taskItem.textContent = task.data().text;
+            taskItem.tabIndex = 0;
             taskList.appendChild(taskItem);
         }
     });
@@ -676,15 +675,20 @@ function sanitizeInput(input) {
     div.textContent = input;
     return div.innerHTML;
 }
+//Allow task addition on enter key while in task input
+taskInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") addTaskBtn.click();
+});
+//Allow tasks to be completed on enter
+taskList.addEventListener("keypress", async function(e) {
+    if (e.target.tagName === 'LI' && e.key === "Enter") await (0, _firestore.updateDoc)((0, _firestore.doc)(db, "todos", e.target.id), {
+        completed: true
+    });
+    renderTasks();
+});
 window.addEventListener('error', function(event) {
     console.error('Error occurred: ', event.message);
 });
-// Set the log level (trace, debug, info, warn, error)
-(0, _loglevelDefault.default).setLevel("info");
-// Example logs
-(0, _loglevelDefault.default).info("Application started");
-(0, _loglevelDefault.default).debug("Debugging information");
-(0, _loglevelDefault.default).error("An error occurred");
 
 },{"firebase/app":"aM3Fo","firebase/firestore":"8A4BC","a9f901fea61c26ef":"72bEf"}],"aM3Fo":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

@@ -28,6 +28,7 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 
 window.addEventListener('load', () => {
+  console.log("On page load");
   renderTasks();
 });
 
@@ -44,6 +45,8 @@ addTaskBtn.addEventListener('click', async () => {
             taskInput.value = "";
         }
         renderTasks();
+    } else {
+      alert("Please enter a task!");
     }
 });
 
@@ -67,6 +70,7 @@ async function renderTasks() {
         const taskItem = document.createElement("li");
         taskItem.id = task.id;
         taskItem.textContent = task.data().text;
+        taskItem.tabIndex = 0;
         taskList.appendChild(taskItem);
       }
     });
@@ -94,17 +98,23 @@ async function renderTasks() {
     return div.innerHTML;
   }
 
+  //Allow task addition on enter key while in task input
+  taskInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      addTaskBtn.click();
+    }
+  });
+
+  //Allow tasks to be completed on enter
+  taskList.addEventListener("keypress", async function(e) {
+    if (e.target.tagName === 'LI' && e.key === "Enter") {
+      await updateDoc(doc(db, "todos", e.target.id), {
+        completed: true
+      });  
+    }
+    renderTasks();
+  });
+
 window.addEventListener('error', function (event) {
     console.error('Error occurred: ', event.message);
 });
-
-
-import log from "loglevel";
-
-// Set the log level (trace, debug, info, warn, error)
-log.setLevel("info");
-
-// Example logs
-log.info("Application started");
-log.debug("Debugging information");
-log.error("An error occurred");
