@@ -28,7 +28,6 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 
 window.addEventListener('load', () => {
-  console.log("On page load");
   renderTasks();
 });
 
@@ -36,17 +35,11 @@ window.addEventListener('load', () => {
 addTaskBtn.addEventListener('click', async () => {
     const task = taskInput.value.trim();
     if (task) {
-        const taskInput = document.getElementById("taskInput");
-        const taskText = sanitizeInput(taskInput.value.trim());
-
-        if (taskText) {
-            await addTaskToFirestore(taskText);
-            renderTasks();
-            taskInput.value = "";
-        }
+        await addTaskToFirestore(task);
+        taskInput.value = "";
         renderTasks();
     } else {
-      alert("Please enter a task!");
+        alert("Please enter a task!");
     }
 });
 
@@ -84,18 +77,7 @@ async function renderTasks() {
   }
 
   async function getTasksFromFirestore() {
-    var data = await getDocs(collection(db, "todos"));
-    let userData = [];
-    data.forEach((doc) => {
-      userData.push(doc);
-  });
-  return userData;
-}
-
-  function sanitizeInput(input) {
-    const div = document.createElement("div");
-    div.textContent = input;
-    return div.innerHTML;
+    return await getDocs(collection(db, "todos"));
   }
 
   //Allow task addition on enter key while in task input
