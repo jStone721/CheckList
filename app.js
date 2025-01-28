@@ -68,10 +68,10 @@ async function renderTasks() {
   tasks.forEach((task, index) => {
     if (!task.data().completed) {
       const taskItem = document.createElement("li");
+      taskItem.tabIndex = 0;
       taskItem.id = task.id;
       taskItem.textContent = task.data().text;
       taskList.appendChild(taskItem);
-      taskItem.tabIndex = 0;
     }
   });
 }
