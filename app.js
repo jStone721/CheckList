@@ -42,6 +42,7 @@ const db = getFirestore(app);
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
+const aiButton = document.getElementById("send-btn");
 
 window.addEventListener("load", () => {
   renderTasks();
