@@ -44,6 +44,7 @@ const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const aiButton = document.getElementById("send-btn");
 const aiInput = document.getElementById("chat-input");
+const addAll = document.getElementById("chat-history");
 
 window.addEventListener("load", () => {
   renderTasks();
